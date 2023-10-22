@@ -22,7 +22,7 @@ type Book struct {
 	Id     string `json:"id"`
 	Name   string `json:"name"`
 	Author string `json:"author"`
-	Image  string `json:"iamge"`
+	Image  string `json:"image"`
 }
 
 func Upload(request events.APIGatewayProxyRequest, cfg aws.Config) (image string, err error) {
@@ -42,7 +42,7 @@ func Upload(request events.APIGatewayProxyRequest, cfg aws.Config) (image string
 		return
 	}
 
-	bucket := "test-bucket-kala"
+	bucket := "serverless-upload-abc"
 	filename := part.FileName()
 
 	data := &s3.PutObjectInput{
